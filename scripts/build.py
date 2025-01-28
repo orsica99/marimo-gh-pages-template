@@ -18,10 +18,10 @@ def export_html_wasm(notebook_path: str, output_dir: str, as_app: bool = False) 
     cmd = ["marimo", "export", "html-wasm"]
     if as_app:
         print(f"Exporting {notebook_path} to {output_path} as app")
-        cmd.extend(["--mode", "run"])
+        cmd.extend(["--mode", "read", "--no-show-code"])
     else:
         print(f"Exporting {notebook_path} to {output_path} as notebook")
-        cmd.extend(["--mode", "edit", "--no-show-code"])
+        cmd.extend(["--mode", "edit"])
 
     try:
         output_file = os.path.join(output_dir, output_path)
