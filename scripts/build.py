@@ -18,7 +18,7 @@ def export_html_wasm(notebook_path: str, output_dir: str, as_app: bool = False) 
     cmd = ["marimo", "export", "html-wasm"]
     if as_app:
         print(f"Exporting {notebook_path} to {output_path} as app")
-        cmd.extend(["--mode", "run", "--token", "--token-password="sup3rs3cr3t""])
+        cmd.extend(["--mode", "run", "--token", "--token-password='sup3rs3cr3t'"])
     else:
         print(f"Exporting {notebook_path} to {output_path} as notebook")
         cmd.extend(["--mode", "edit"])
