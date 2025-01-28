@@ -15,7 +15,7 @@ def export_html_wasm(notebook_path: str, output_dir: str, as_app: bool = False) 
     """
     output_path = notebook_path.replace(".py", ".html")
 
-    cmd = ["marimo", "export", "html-wasm"]
+    cmd = ["marimo", "export", "html-wasm", "--no-show-code"]
     if as_app:
         print(f"Exporting {notebook_path} to {output_path} as app")
         cmd.extend(["--mode", "run"])
